@@ -1,12 +1,24 @@
-"use strict"
+"use strict";
 
-btnAjouter.onclick = ()=>{
-    //fonction qui crée un li 
-    const li = document.createElement("li");
-    //on ajoute du texte dans ce li
-    li.textContent = champ.value;
-    //on ajoute ce li à la liste ol
-    ol.appendChild(li);
-    //on vide le champ juste après
-    champ.value="";
+form.onsubmit = () => {
+  const li = document.createElement("li");
+  const spanDel = document.createElement("span");
+  
+  spanDel.textContent = "[X]";
+  spanDel.onclick = () => del(li);
+  
+  li.innerHTML = champ.value;
+  li.appendChild(spanDel);
+  ol.appendChild(li);
+  champ.value = "";
+  noTache.style.display = "none";
+  
+  return false;
 }
+  function del(element) {
+    element.remove();
+    if (ol.innerHTML === "")
+    {
+    noTache.style.display = "block";
+    }
+  }
