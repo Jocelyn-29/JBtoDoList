@@ -4,6 +4,7 @@ form.onsubmit = () => {
   const li = document.createElement("li");
   const spanDel = document.createElement("span");
   
+
   spanDel.textContent = "[X]";
   spanDel.onclick = () => del(li);
   
@@ -17,8 +18,12 @@ form.onsubmit = () => {
 }
   function del(element) {
     element.remove();
-    if (ol.innerHTML === "")
-    {
-    noTache.style.display = "block";
-    }
+    
+    noTache.style.display = (ol.innerHTML == "") ? "block" : "none";
+    
   }
+  const bouton2 = document.getElementById("bouton2");
+bouton2.onclick = ()=>{
+  localStorage.setItem("bonjour", test.value);
+}
+test.value = localStorage.getItem("bonjour");
