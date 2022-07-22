@@ -1,8 +1,14 @@
 "use strict";
-
+ol.innerHTML = localStorage.getItem("list");
+const spanDels = document.querySelectorAll(".delete");
+for(let span of spanDels){
+  span.onclick = ()=> del(span.parentElement)
+}
+noTache.style.display = (ol.innerHTML == "") ? "block" : "none";
 form.onsubmit = () => {
   const li = document.createElement("li");
   const spanDel = document.createElement("span");
+  spanDel.classList.add("delete");
   
 
   spanDel.textContent = "[X]";
@@ -13,6 +19,7 @@ form.onsubmit = () => {
   ol.appendChild(li);
   champ.value = "";
   noTache.style.display = "none";
+  localStorage.setItem("list", ol.innerHTML);
   
   return false;
 }
@@ -20,10 +27,6 @@ form.onsubmit = () => {
     element.remove();
     
     noTache.style.display = (ol.innerHTML == "") ? "block" : "none";
-    
+    localStorage.setItem("list", ol.innerHTML);
   }
-  const bouton2 = document.getElementById("bouton2");
-bouton2.onclick = ()=>{
-  localStorage.setItem("bonjour", test.value);
-}
-test.value = localStorage.getItem("bonjour");
+ 
