@@ -5,6 +5,7 @@ for(let span of spanDels){
   span.onclick = ()=> del(span.parentElement)
 }
 noTache.style.display = (ol.innerHTML == "") ? "block" : "none";
+
 form.onsubmit = () => {
   const li = document.createElement("li");
   const spanDel = document.createElement("span");

@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+   
+}
+body {
+    background: linear-gradient(#22c1c3 0%, #dfdfdf 100%);
+    font-family:'Roboto', sans-serif;
+}
+
+.form{
+    display:flex;
+    justify-content: space-around;
+    height: 18vh;
+    font-size: 5vw;
+}
+
+.champ {
+   width:82vw; 
+   background-color:rgb(127, 243, 127);
+    padding-left: 1vw;
+}
+
+.btnAjouter{
+    width:17vw;
+    background-color: aqua;
+    color:rgb(137, 137, 180);
+    cursor:pointer;
+}
+
+
+.champ, .btnAjouter{
+    border:2px, solid teal;
+    border-radius: 5px;
+    
+}
